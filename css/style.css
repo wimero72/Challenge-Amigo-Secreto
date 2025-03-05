@@ -2,10 +2,10 @@
     --color-primary: #4B69FD;
     --color-secondary:rgb(255, 255, 113);
     --color-tertiary: #C4C4C4;
-    --color-button: rgb(60, 255, 0);
-    --color-button-hover:#f00c2bc4;
+    --color-button: red;
+    --color-button-hover:#0cf02a;
     --color-text: black;
-    --color-rojo: red;
+    --color-rojo: black;
 }
 
 /* Estilos generales */
@@ -159,4 +159,5 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+    color: #000;
 }
