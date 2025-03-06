@@ -1,4 +1,5 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+let cantidadAmigosenLista=0;
 let indiceLista=0;
 let listaAmigos=[];
 let titulo1=document.querySelector("h1");
@@ -9,7 +10,7 @@ function showMsg(etiqueta, texto) {
    let etiquetaHTML
 }
 function agregaAlistaAmigos() {
-   let nombreAmigo=document.getElementById("amigo").value;
+   let nombreAmigo=document.querySelector("#amigo").value;
    console.log(nombreAmigo);
    if (listaAmigos.includes(nombreAmigo)){
     alert("nombre repetido ingrese el nombre mas un identificador");
@@ -29,16 +30,18 @@ function asignarTextoElemento(elemento, texto) {
    return;
 }
 function sorteaAmigoSecreto() {
+   cantidadAmigosenLista=listaAmigos.length
    indiceLista =  Math.floor(Math.random()*cantidadAmigosenLista)+1;
+   amigoSecreto=listaAmigos[indiceLista];
 
-   console.log(numeroGenerado);
-   console.log(listaNumerosSorteados);
+   console.log(indiceLista);
+   console.log(amigoSecreto);
    //Si ya sorteamos todos los números
-   if (listaNumerosSorteados.length == numeroMaximo) {
-       asignarTextoElemento('p','Ya se sortearon todos los números posibles');
+   if (listaAmigos.length == cantidadAmigosenLista) {
+       asignarTextoElemento('p','Ya se sortearon todos los nombres de amigos');
    } else {
        //Si el numero generado está incluido en la lista 
-       if (listaNumerosSorteados.includes(numeroGenerado)) {
+       if (listaAmigosSorteados.includes(amigoSecreto)) {
            return generarNumeroSecreto();
        } else {
            listaNumerosSorteados.push(numeroGenerado);
@@ -46,3 +49,7 @@ function sorteaAmigoSecreto() {
        }
    }
 }
+function validainputvacio() {
+
+}
+    
