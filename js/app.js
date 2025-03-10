@@ -2,10 +2,16 @@
 let cantidadAmigosenLista = 0;
 //let indiceLista = 0;
 let listaAmigos = [];
-
-function muestraMsgEtiqueta(elemento, texto) {
-   let elementoHTML = document.querySelector(elemento);
-   elementoHTML.innerHTML = texto;
+function muestraMsgEtiqueta(elemento,texto){
+   let elementoHTML =document.querySelector(elemento);
+   elementoHTML.texto = texto;
+//function muestraMsgEtiqueta(idElemento, texto,colorTexto) {
+   //let elementoHTML = document.getElementById(idElemento);
+   document.getElementById(idElemento).style.color = colorTexto;
+   console.log(idElemento);
+   console.log(elemento);
+   
+   
    return;
 }
 
@@ -31,7 +37,7 @@ function addItemLista(){
 function agregaAlistaAmigos() {
    let nombreAmigo = document.getElementById('amigo').value;
    if (nombreAmigo==="") {
-      muestraMsgEtiqueta("h2","Por favor introduce un nombre");
+      muestraMsgEtiqueta("titulo2","Por favor introduce un nombre","red");
    }else{
       if (listaAmigos.includes(nombreAmigo)) {
          muestraMsgEtiqueta("h2","Nombre repetido ingrese el nombre mas un identificador");
@@ -48,7 +54,7 @@ function sorteaAmigoSecreto() {
    cantidadAmigosenLista = listaAmigos.length
    indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) + 1;
    amigoSecreto = listaAmigos[indiceLista];
-
+   muestraMsgEtiqueta("ul", amigoSecreto)
    console.log(indiceLista);
    console.log(amigoSecreto);
    // //Si ya sorteamos todos los números

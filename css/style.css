@@ -5,7 +5,7 @@
     --color-button: red;
     --color-button-hover:#0cf02a;
     --color-text: black;
-    --color-rojo: black;
+    --color-rojo: rgb(235, 18, 18);
 }
 
 /* Estilos generales */
@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #000;
 }
 
 body {
@@ -58,7 +59,7 @@ body {
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
-    color: var(--color-rojo);
+    color: var(--color-text);
 }
 
 .section-title {
@@ -148,7 +149,7 @@ ul {
     align-items: center;
     width: 100%;
     padding: 10px 40px;
-    color: var(--color-rojo);
+    color: var(--color-text);
     background-color: var(--color-button);
     font-size: 16px;
 }
