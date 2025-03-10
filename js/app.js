@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let cantidadAmigosenLista = 0;
-let indiceLista = 0;
+//let indiceLista = 0;
 let listaAmigos = [];
 
 function muestraMsgEtiqueta(elemento, texto) {
@@ -16,31 +16,31 @@ function limpiarInput() {
    document.querySelector("#amigo").value = '';
 }
 
-function addItemLista(ntextoitem){
-   let nuevoItem=document.createElement('li');
-   let ul=document.getElementById("listaAmigoa");
-   let textoit=document.createTextNode(ntextoitem);
-   nuevoItem.appendChild(textoit);
-   ul.appendChild(nuevoItem);
-   console.log(nuevoItem);
-   limpiarInput();
-   return;
-}
+function addItemLista(){
+      var nomAmigo;
+      var li = document.createElement("li");
+      var p = document.createElement("p");
+      indiceLista = listaAmigos.length-1;
+      nomAmigo = listaAmigos[indiceLista];
+      console.log(nomAmigo);
+      p.appendChild(document.createTextNode(nomAmigo));
+      document.querySelector("#listaAmigos").appendChild(li).appendChild(p);
+      //for (i = 0; i < listaAmigos.length; i++) {          
+      //}
+  }   
 function agregaAlistaAmigos() {
    let nombreAmigo = document.getElementById('amigo').value;
-   console.log(nombreAmigo);
    if (nombreAmigo==="") {
       muestraMsgEtiqueta("h2","Por favor introduce un nombre");
    }else{
       if (listaAmigos.includes(nombreAmigo)) {
-         muestraMsgEtiqueta("h2","nombre repetido ingrese el nombre mas un identificador");
+         muestraMsgEtiqueta("h2","Nombre repetido ingrese el nombre mas un identificador");
       } else {
          listaAmigos.push(nombreAmigo);
+         addItemLista();
       }
    }
-
-   console.log(listaAmigos);
-   addItemLista(nombreAmigo);
+   limpiarInput();
    return;
 }
 
