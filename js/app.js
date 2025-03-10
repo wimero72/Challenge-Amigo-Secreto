@@ -7,7 +7,7 @@ function muestraMsgEtiqueta(elemento,texto){
    elementoHTML.texto = texto;
 //function muestraMsgEtiqueta(idElemento, texto,colorTexto) {
    //let elementoHTML = document.getElementById(idElemento);
-   document.getElementById(idElemento).style.color = colorTexto;
+//   document.getElementById(idElemento).style.color = colorTexto;
    console.log(idElemento);
    console.log(elemento);
    
