@@ -2,21 +2,22 @@
 let cantidadAmigosenLista = 0;
 //let indiceLista = 0;
 let listaAmigos = [];
-function muestraMsgEtiqueta(elemento,texto){
+function muestraMsgEtiqueta(elemento,texto,colorTexto){
    let elementoHTML =document.querySelector(elemento);
-   elementoHTML.texto = texto;
-//function muestraMsgEtiqueta(idElemento, texto,colorTexto) {
+   elementoHTML.innerHTML = texto;
+   //function muestraMsgEtiqueta(idElemento, texto,colorTexto) {
    //let elementoHTML = document.getElementById(idElemento);
-//   document.getElementById(idElemento).style.color = colorTexto;
-   console.log(idElemento);
+   elementoHTML.style.color = colorTexto;
    console.log(elemento);
-   
-   
    return;
 }
 
 muestraMsgEtiqueta("h1","Juego del Amigo Secreto ");
 muestraMsgEtiqueta("h2","Introduce el nombre de tus amigos");
+
+function mayusc(texInp) {
+   texInp.value = texInp.value.toUpperCase();
+}
 
 function limpiarInput() {
    document.querySelector("#amigo").value = '';
@@ -36,11 +37,12 @@ function addItemLista(){
   }   
 function agregaAlistaAmigos() {
    let nombreAmigo = document.getElementById('amigo').value;
+   nombreAmigo=nombreAmigo.toUpperCase();
    if (nombreAmigo==="") {
-      muestraMsgEtiqueta("titulo2","Por favor introduce un nombre","red");
+      muestraMsgEtiqueta("h2","Por favor introduce un nombre","red");
    }else{
       if (listaAmigos.includes(nombreAmigo)) {
-         muestraMsgEtiqueta("h2","Nombre repetido ingrese el nombre mas un identificador");
+         muestraMsgEtiqueta("h2","Nombre repetido ingrese el nombre mas un identificador","red");
       } else {
          listaAmigos.push(nombreAmigo);
          addItemLista();
@@ -50,27 +52,23 @@ function agregaAlistaAmigos() {
    return;
 }
 
+
 function sorteaAmigoSecreto() {
    cantidadAmigosenLista = listaAmigos.length
-   indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) + 1;
+   indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) +1;
    amigoSecreto = listaAmigos[indiceLista];
-   muestraMsgEtiqueta("ul", amigoSecreto)
-   console.log(indiceLista);
-   console.log(amigoSecreto);
-   // //Si ya sorteamos todos los números
-   // if (listaAmigos.length == cantidadAmigosenLista) {
-   //     asignarTextoElemento('p','Ya se sortearon todos los nombres de amigos');
-   // } else {
-   //     //Si el numero generado está incluido en la lista 
-   //     if (listaAmigosSorteados.includes(amigoSecreto)) {
-   //         return generarNumeroSecreto();
-   //     } else {
-   //         listaNumerosSorteados.push(numeroGenerado);
-   //         return numeroGenerado;
-   //     }
-   // }
+   document.querySelector("#resultado").textContent=amigoSecreto;
+   document.querySelector('#jugar').setAttribute('disabled','true');
+   document.querySelector('#reiniciar').setAttribute('disabled','false');
    return amigoSecreto
 }
-function validainputvacio() {
 
+function reiniciarJuego() {
+   //limpiar caja
+   document.querySelector("#listaAmigos").textContent="";
+   document.querySelector("#resultado").textContent="";
+   document.querySelector('#reiniciar').setAttribute('disabled','true');
+   
 }
+
+
