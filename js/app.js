@@ -58,8 +58,8 @@ function sorteaAmigoSecreto() {
    indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) +1;
    amigoSecreto = listaAmigos[indiceLista];
    document.querySelector("#resultado").textContent=amigoSecreto;
-   document.querySelector('#jugar').setAttribute('disabled','true');
-   document.querySelector('#reiniciar').setAttribute('disabled','false');
+   document.querySelector("#jugar").setAttribute('disabled','true');
+   document.querySelector("#reiniciar").setAttribute('disabled','false');
    return amigoSecreto
 }
 
