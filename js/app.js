@@ -32,9 +32,8 @@ function addItemLista(){
       console.log(nomAmigo);
       p.appendChild(document.createTextNode(nomAmigo));
       document.querySelector("#listaAmigos").appendChild(li).appendChild(p);
-      //for (i = 0; i < listaAmigos.length; i++) {          
-      //}
-  }   
+  } 
+
 function agregaAlistaAmigos() {
    let nombreAmigo = document.getElementById('amigo').value;
    nombreAmigo=nombreAmigo.toUpperCase();
@@ -52,14 +51,20 @@ function agregaAlistaAmigos() {
    return;
 }
 
+function disableClicks() {
+   cont.style.pointerEvents = "none";
+ }
 
 function sorteaAmigoSecreto() {
-   cantidadAmigosenLista = listaAmigos.length
+   cantidadAmigosenLista = listaAmigos.length;
    indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) +1;
    amigoSecreto = listaAmigos[indiceLista];
+   cont=document.getElementById("jugar"); //disable
+   disableClicks(cont);
    document.querySelector("#resultado").textContent=amigoSecreto;
    document.querySelector("#jugar").setAttribute('disabled','true');
    document.querySelector("#reiniciar").setAttribute('disabled','false');
+   console.log(cantidadAmigosenLista);
    return amigoSecreto
 }
 

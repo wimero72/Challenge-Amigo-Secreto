@@ -1,11 +1,12 @@
 :root {
     --color-primary: #4B69FD;
     --color-secondary:rgb(255, 255, 113);
-    --color-tertiary: #C4C4C4;
+    --color-tertiary: #56e414ef;
+    --color-disabled: #C4C4C4;
     --color-button: red;
     --color-button-hover:#0cf02a;
     --color-text: black;
-    --color-rojo: rgb(235, 18, 18);
+   /* --color-rojo: rgb(233, 15, 15);*/
 }
 
 /* Estilos generales */
@@ -58,7 +59,7 @@ body {
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
-    color: black;
+    color: var(--color-text);
 }
 
 .section-title {
@@ -88,11 +89,9 @@ body {
 }
 
 .button-container {
-    display: block;
-    flex-direction: row;
-    width: 500px;
-    height: 70px;
-    justify-content: center;
+    display: flex;
+    width: 400px;
+    justify-content: auto;
 }
 
 /* Estilos de entrada de texto */
@@ -102,18 +101,18 @@ body {
     font-size: 16px;
     border: 2px solid #333;
     border-right: none;
-    border-radius: 25px 0 0 25px;
+    border-radius: 25px 0px 0px 25px;
     font-family: "Merriweather", serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos de botón */
 button {
-    padding: 15px 30px;
+    padding: 10px 40px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     border: 2px solid #000;
-    border-radius: 25px;
+    border-radius: 25px 0 0 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
@@ -125,7 +124,8 @@ button {
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
 }
 
 /* Listas */
@@ -147,16 +147,20 @@ ul {
 
 /* Botón de sortear título */
 .button-draw {
-    width: 50%;
-    height: 80%;
-    padding: 10px 40px;
-    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    margin:10px 0 0 10px;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    color: var(--color-text);/*cambio*/
     background-color: var(--color-button);
     font-size: 16px;
 }
 
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 20px;
+    width: 40%;
+    height:80%;
 }
 
 .button-draw:hover {
