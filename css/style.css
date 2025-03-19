@@ -156,7 +156,7 @@ ul {
     background-color: var(--color-button);
     font-size: 16px;
 }
-.button-draw:disabled {
+.button-draw,.button-add:disabled {
     background: #898989;
 }
 
