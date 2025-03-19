@@ -112,13 +112,13 @@ button {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
+    border-radius: 25px 25px 25px 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-primary);
     color: var(--color-text);
     border-radius: 0 25px 25px 0;
 }
@@ -156,11 +156,14 @@ ul {
     background-color: var(--color-button);
     font-size: 16px;
 }
+.button-draw:disabled {
+    background: #898989;
+}
 
 .button-draw img {
     margin-right: 20px;
-    width: 40%;
-    height:80%;
+    width: 35%;
+    height:70%;
 }
 
 .button-draw:hover {
